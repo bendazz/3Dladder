@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Circular Japanese Ladder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>3D Circular Japanese Ladder</h1>
+            <p>Explore circular permutations in 3D! Click rung toggles and watch numbers move around the cylinder.</p>
+        </header>
+        
+        <div class="controls">
+            <div class="settings-row">
+                <div class="number-selector">
+                    <label class="setting-label">Numbers:</label>
+                    <select id="numberCount">
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="animation-mode">
+                    <label class="setting-label">Mode:</label>
+                    <label class="radio-label">
+                        <input type="radio" name="animationMode" value="sequential" checked> Sequential
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="animationMode" value="simultaneous"> Simultaneous
+                    </label>
+                </div>
+                <div class="speed-selector">
+                    <label class="setting-label">Speed:</label>
+                    <select id="animationSpeed">
+                        <option value="slow">Slow</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="fast">Fast</option>
+                    </select>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="startButton" class="start-btn">Start Animation</button>
+                <button id="runAgainButton" class="run-again-btn" style="display: none;">Run Again</button>
+                <button id="resetButton" class="reset-btn">Reset</button>
+                <button id="rotateButton" class="rotate-btn">Auto Rotate</button>
+            </div>
+        </div>
+        
+        <div class="scene-container">
+            <div id="threeContainer"></div>
+            <div class="rung-controls">
+                <h3>Rung Controls</h3>
+                <div id="rungControlsContainer"></div>
+            </div>
+        </div>
+        
+        <div class="status">
+            <p id="statusText">Use the rung controls on the right to add rungs, then press Start!</p>
+        </div>
+        
+        <div class="info-panel">
+            <h3>About Circular Permutations</h3>
+            <p>In this 3D visualization, the rails form a cylinder. Numbers can move around the circle, and rungs on the last rail connect to the first rail, creating circular permutations!</p>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="script.js?v=5"></script>
+</body>
+</html>
